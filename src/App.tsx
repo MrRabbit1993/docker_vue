@@ -1,13 +1,15 @@
 import { defineComponent } from '@vue/composition-api'
 import Styles from './index.module.scss'
+import MenuCmp from '@/components/menu'
+import { constantRouterMap } from '@/router'
 export default defineComponent({
   name: 'App',
+  components: { MenuCmp },
   render() {
     return (
-      <div id={Styles.app}>
-        <img alt="Vue logo" src={require('./assets/logo.png')} />
-        <div class={Styles['title-info']}>3232</div>
-        <div class={Styles.titleInfo}>3232</div>
+      <div class={Styles.container}>
+        <menu-cmp class={Styles['menu-box']} dataSource={constantRouterMap} />
+        <router-view class={Styles['view-box']} />
       </div>
     )
   }

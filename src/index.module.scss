@@ -1,8 +1,11 @@
-#app {
-  .titleInfo{
-    color:red;
+.container{
+  width:100%;
+  height:100%;
+  display: flex;
+  .menu-box{
+    width:120px;
   }
-  .title-info{
-    color:green;
+  .view-box{
+    flex:1;
   }
 }

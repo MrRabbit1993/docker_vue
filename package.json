@@ -6,14 +6,18 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "docker":"sh build/docker.sh ./Dockerfile"
+    "docker": "sh build/docker.sh ./Dockerfile",
+    "deploy": "npm run build && npm run docker"
   },
   "dependencies": {
+    "@types/webpack-env": "^1.16.3",
     "@vue/composition-api": "^1.4.2",
+    "axios": "^0.21.0",
     "core-js": "^3.6.5",
     "vue": "^2.6.11",
     "vue-class-component": "^7.2.3",
-    "vue-property-decorator": "^9.1.2"
+    "vue-property-decorator": "^9.1.2",
+    "vue-router": "^3.2.0"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.18.0",
