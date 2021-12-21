@@ -1,3 +1,5 @@
 import { RouteConfigSingleView } from 'vue-router/types/router'
 
-export interface RouteCustom extends RouteConfigSingleView {}
+export interface RouteCustom extends RouteConfigSingleView {
+  title:string
+}

@@ -26,7 +26,7 @@ export default defineComponent<IMenu, IMenuInstance>({
       <div class={Styles.container}>
         {this.dataSource?.map((item) => (
           <div class={Styles.item} onClick={() => this.onToggleMenu(item)}>
-            {item.name}
+            {item.title}
           </div>
         ))}
       </div>
