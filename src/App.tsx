@@ -1,15 +1,23 @@
-import { defineComponent } from '@vue/composition-api'
+import { defineComponent, ref } from '@vue/composition-api'
 import Styles from './index.module.scss'
-import MenuCmp from '@/components/menu'
-import { constantRouterMap } from '@/router'
+import AutoCompleteCmp from './components/AutoComplete'
 export default defineComponent({
   name: 'App',
-  components: { MenuCmp },
+  components: { AutoCompleteCmp },
+  setup() {
+    const searchValue = ref<string>('')
+
+    const onSelect = (item) => {
+      console.log(item)
+    }
+    return { searchValue, onSelect }
+  },
   render() {
+    console.log(this.onSelect)
     return (
       <div class={Styles.container}>
-        <menu-cmp class={Styles['menu-box']} dataSource={constantRouterMap} />
-        <router-view class={Styles['view-box']} />
+        {/* <search-box-cmp></search-box-cmp> */}
+        <auto-complete-cmp v-model={this.searchValue} onSelect={this.onSelect} />
       </div>
     )
   }

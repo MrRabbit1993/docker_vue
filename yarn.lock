@@ -2090,6 +2090,13 @@ babel-plugin-polyfill-regenerator@^0.3.0:
   dependencies:
     "@babel/helper-define-polyfill-provider" "^0.3.0"
 
+babel-preset-vca-jsx@^0.3.6:
+  version "0.3.6"
+  resolved "http://10.12.102.194:4873/babel-preset-vca-jsx/-/babel-preset-vca-jsx-0.3.6.tgz#7bafc7e2c990496a742083c7fdd7bc110c6eb5f4"
+  integrity sha1-e6/H4smQSWp0IIPH/de8EQxutfQ=
+  dependencies:
+    "@babel/plugin-syntax-jsx" "^7.2.0"
+
 balanced-match@^1.0.0:
   version "1.0.2"
   resolved "http://10.12.102.194:4873/balanced-match/-/balanced-match-1.0.2.tgz#e83e3a7e3f300b34cb9d87f615fa0cbf357690ee"
@@ -2501,9 +2508,9 @@ caniuse-api@^3.0.0:
     lodash.uniq "^4.5.0"
 
 caniuse-lite@^1.0.0, caniuse-lite@^1.0.30001109, caniuse-lite@^1.0.30001286:
-  version "1.0.30001291"
-  resolved "http://10.12.102.194:4873/caniuse-lite/-/caniuse-lite-1.0.30001291.tgz#08a8d2cfea0b2cf2e1d94dd795942d0daef6108c"
-  integrity sha512-roMV5V0HNGgJ88s42eE70sstqGW/gwFndosYrikHthw98N5tLnOTxFqMLQjZVRxTWFlJ4rn+MsgXrR7MDPY4jA==
+  version "1.0.30001292"
+  resolved "http://10.12.102.194:4873/caniuse-lite/-/caniuse-lite-1.0.30001292.tgz#4a55f61c06abc9595965cfd77897dc7bc1cdc456"
+  integrity sha512-jnT4Tq0Q4ma+6nncYQVe7d73kmDmE9C3OGTx3MvW7lBM/eY1S1DZTMBON7dqV481RhNiS5OxD7k9JQvmDOTirw==
 
 case-sensitive-paths-webpack-plugin@^2.3.0:
   version "2.4.0"
@@ -3587,9 +3594,9 @@ ejs@^2.6.1:
   integrity sha1-SGYSh1c9zFPjZsehrlLDoSDuybo=
 
 electron-to-chromium@^1.4.17:
-  version "1.4.24"
-  resolved "http://10.12.102.194:4873/electron-to-chromium/-/electron-to-chromium-1.4.24.tgz#9cf8a92d5729c480ee47ff0aa5555f57467ae2fa"
-  integrity sha512-erwx5r69B/WFfFuF2jcNN0817BfDBdC4765kQ6WltOMuwsimlQo3JTEq0Cle+wpHralwdeX3OfAtw/mHxPK0Wg==
+  version "1.4.26"
+  resolved "http://10.12.102.194:4873/electron-to-chromium/-/electron-to-chromium-1.4.26.tgz#d71b9da220543cf10614a576c3d5ebbe43d96efb"
+  integrity sha512-cA1YwlRzO6TGp7yd3+KAqh9Tt6Z4CuuKqsAJP6uF/H5MQryjAGDhMhnY5cEXo8MaRCczpzSBhMPdqRIodkbZYw==
 
 elliptic@^6.5.3:
   version "6.5.4"
@@ -5651,18 +5658,18 @@ kind-of@^6.0.0, kind-of@^6.0.2:
   integrity sha1-B8BQNKbDSfoG4k+jWqdttFgM5N0=
 
 launch-editor-middleware@^2.2.1:
-  version "2.2.1"
-  resolved "http://10.12.102.194:4873/launch-editor-middleware/-/launch-editor-middleware-2.2.1.tgz#e14b07e6c7154b0a4b86a0fd345784e45804c157"
-  integrity sha1-4UsH5scVSwpLhqD9NFeE5FgEwVc=
+  version "2.3.0"
+  resolved "http://10.12.102.194:4873/launch-editor-middleware/-/launch-editor-middleware-2.3.0.tgz#edd0ed45a46f5f1cf27540f93346b5de9e8c3be0"
+  integrity sha512-GJR64trLdFFwCoL9DMn/d1SZX0OzTDPixu4mcfWTShQ4tIqCHCGvlg9fOEYQXyBlrSMQwylsJfUWncheShfV2w==
   dependencies:
-    launch-editor "^2.2.1"
+    launch-editor "^2.3.0"
 
-launch-editor@^2.2.1:
-  version "2.2.1"
-  resolved "http://10.12.102.194:4873/launch-editor/-/launch-editor-2.2.1.tgz#871b5a3ee39d6680fcc26d37930b6eeda89db0ca"
-  integrity sha1-hxtaPuOdZoD8wm03kwtu7aidsMo=
+launch-editor@^2.2.1, launch-editor@^2.3.0:
+  version "2.3.0"
+  resolved "http://10.12.102.194:4873/launch-editor/-/launch-editor-2.3.0.tgz#23b2081403b7eeaae2918bda510f3535ccab0ee4"
+  integrity sha512-3QrsCXejlWYHjBPFXTyGNhPj4rrQdB+5+r5r3wArpLH201aR+nWUgw/zKKkTmilCfY/sv6u8qo98pNvtg8LUTA==
   dependencies:
-    chalk "^2.3.0"
+    picocolors "^1.0.0"
     shell-quote "^1.6.1"
 
 levn@^0.3.0, levn@~0.3.0:
