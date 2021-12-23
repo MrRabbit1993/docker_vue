@@ -25,6 +25,7 @@ export default defineComponent({
     const onHandleSelect = (item: IGitHubUser) => {
       defaultValue.value = item.login
       suggestions.value = []
+      suggestions.value.splice(0, 0)
       emit('select', item)
     }
     // 获取匹配信息

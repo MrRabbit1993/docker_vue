@@ -1,0 +1,53 @@
+.base-info-container{
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .avatar{
+    width: 260px;
+    height:260px;
+    border-radius: 50%;
+  }
+  .user-name{
+    color:rgb(36, 41, 47);
+    color-scheme: light;
+    font-size: 26px;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+    line-height: 32.5px;
+    font-weight: 600;
+  }
+  .followers{
+    width:200px;
+    display: flex;
+    align-items: center;
+    .follower-info{
+      margin-left: 4px;
+      color:rgb(87, 96, 106);
+      color-scheme: light;
+      font-size: 14px;
+      font-weight: 600;
+      .txt{
+        color:rgb(36, 41, 47);
+      }
+    }
+  }
+  .info{
+    width:200px;
+    margin-top:16px;
+    .info-row{
+      display: flex;
+      align-items: center;
+      margin-top: 4px;
+      .info-txt{
+        color:rgb(36, 41, 47);
+        font-size:14px;
+        line-height: 21px;
+        margin-left: 4px;
+      }
+    }
+  }
+  .svg-icon{
+    fill:rgb(87, 96, 106);
+  }
+}
