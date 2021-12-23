@@ -1,8 +1,7 @@
-import { defineComponent, ref } from '@vue/composition-api'
+import { defineComponent, ref, PropType } from '@vue/composition-api'
 import Styles from './index.module.scss'
 import InputCmp from '@/components/Input'
 import { IGitHubUser, IHttpRequestUser } from './type'
-import { getRequestList } from './api'
 export default defineComponent({
   name: 'AutoCompleteCmp',
   components: { InputCmp },
@@ -10,6 +9,9 @@ export default defineComponent({
     value: {
       type: String,
       default: ''
+    },
+    fetchSuggestions: {
+      type: Function as PropType<(param: ObjRecord<any>) => Promise<IHttpRequestUser> | Array<IGitHubUser>>
     }
   },
   setup(props, { emit }) {
@@ -30,8 +32,13 @@ export default defineComponent({
     }
     // 获取匹配信息
     const getRequestInfo = async (searchKey: string) => {
-      const data = (await getRequestList({ q: searchKey })) as IHttpRequestUser
-      suggestions.value = data.items
+      const results = props.fetchSuggestions({ q: searchKey })
+      if (results instanceof Promise) {
+        const data = await results
+        suggestions.value = data.items
+      } else {
+        suggestions.value = results
+      }
     }
 
     //设置高亮下标
