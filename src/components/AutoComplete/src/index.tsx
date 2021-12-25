@@ -32,7 +32,7 @@ export default defineComponent({
     }
     // 获取匹配信息
     const getRequestInfo = async (searchKey: string) => {
-      const results = props.fetchSuggestions({ q: searchKey })
+      const results = props?.fetchSuggestions({ q: searchKey })
       if (results instanceof Promise) {
         const data = await results
         suggestions.value = data.items

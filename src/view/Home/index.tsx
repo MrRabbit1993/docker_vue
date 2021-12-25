@@ -9,15 +9,18 @@ export default defineComponent({
   setup() {
     const searchValue = ref<string>('')
     const baseInfo = ref<IBaseInfo>({})
+    const baseInfoShow = ref<boolean>(false)
 
     const onSelect = (item) => {
       const { login } = item
+      console.log(item)
       onRequestDetailInfo(login)
     }
     const onRequestDetailInfo = async (userName) => {
       baseInfo.value = (await getRequestInfo(userName)) as IBaseInfo
+      baseInfoShow.value = true
     }
-    return { searchValue, baseInfo, onSelect }
+    return { searchValue, baseInfo, baseInfoShow, onSelect }
   },
   render() {
     return (
@@ -29,7 +32,7 @@ export default defineComponent({
           fetchSuggestions={getRequestList}
           // fetchSuggestions={() => [{ login: 1 }, { login: 2 }]}
         />
-        <base-info-cmp class={Styles['info-box']} dataSource={this.baseInfo} />
+        {this.baseInfoShow ? <base-info-cmp class={Styles['info-box']} dataSource={this.baseInfo} /> : null}
       </div>
     )
   }

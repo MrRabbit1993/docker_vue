@@ -1,4 +1,4 @@
-import { defineComponent, ref, PropType } from '@vue/composition-api'
+import { defineComponent, PropType } from '@vue/composition-api'
 import Styles from './index.module.scss'
 type InfoType = { icon: string; txt: string }
 export interface IBaseInfo {
@@ -70,7 +70,7 @@ export default defineComponent({
                   data-view-component="true">
                   <path fill-rule="evenodd" d={MapSvgInfo[item.icon]}></path>
                 </svg>
-                <div class={Styles['info-txt']}>{item.txt}</div>
+                <div class={Styles['info-txt']}>{item.txt || '暂无数据'}</div>
               </div>
             )
           })}
