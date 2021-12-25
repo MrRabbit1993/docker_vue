@@ -1,6 +1,6 @@
 import { defineComponent, ref } from '@vue/composition-api'
 import Styles from './index.module.scss'
-import AutoCompleteCmp from '@/components/AutoComplete'
+import AutoCompleteCmp, { KeyValueProps } from '@/components/AutoComplete'
 import BaseInfoCmp, { IBaseInfo } from '@/components/BaseInfo'
 import { getRequestInfo, getRequestList } from './api'
 export default defineComponent({
@@ -10,17 +10,17 @@ export default defineComponent({
     const searchValue = ref<string>('')
     const baseInfo = ref<IBaseInfo>({})
     const baseInfoShow = ref<boolean>(false)
+    const keyValue = ref<KeyValueProps>({ key: 'login', value: 'login' })
 
     const onSelect = (item) => {
       const { login } = item
-      console.log(item)
       onRequestDetailInfo(login)
     }
     const onRequestDetailInfo = async (userName) => {
       baseInfo.value = (await getRequestInfo(userName)) as IBaseInfo
       baseInfoShow.value = true
     }
-    return { searchValue, baseInfo, baseInfoShow, onSelect }
+    return { searchValue, baseInfo, baseInfoShow, keyValue, onSelect }
   },
   render() {
     return (
@@ -29,6 +29,7 @@ export default defineComponent({
           v-model={this.searchValue}
           onSelect={this.onSelect}
           class={Styles.search}
+          keyValue={this.keyValue}
           fetchSuggestions={getRequestList}
           // fetchSuggestions={() => [{ login: 1 }, { login: 2 }]}
         />

@@ -1,7 +1,7 @@
 import { defineComponent, ref, PropType } from '@vue/composition-api'
 import Styles from './index.module.scss'
 import InputCmp from '@/components/Input'
-import { IGitHubUser, IHttpRequestUser } from './type'
+import { IGitHubUser, IHttpRequestUser, KeyValueProps } from './type'
 export default defineComponent({
   name: 'AutoCompleteCmp',
   components: { InputCmp },
@@ -9,6 +9,10 @@ export default defineComponent({
     value: {
       type: String,
       default: ''
+    },
+    keyValue: {
+      type: Object as PropType<KeyValueProps>,
+      default: () => ({ key: 'key', value: 'value' })
     },
     fetchSuggestions: {
       type: Function as PropType<(param: ObjRecord<any>) => Promise<IHttpRequestUser> | Array<IGitHubUser>>
@@ -19,13 +23,14 @@ export default defineComponent({
     const highLightIndex = ref<number>(-1) // 高亮小标
     const suggestions = ref<Array<IGitHubUser>>([]) // 匹配列
     const suggestionsInstance = ref<HTMLUListElement>(null)
+
     const onChangeInput = () => {
       getRequestInfo(defaultValue.value)
     }
 
     // 下拉菜单选中事件
     const onHandleSelect = (item: IGitHubUser) => {
-      defaultValue.value = item.login
+      defaultValue.value = item[props.keyValue.key]
       suggestions.value = []
       suggestions.value.splice(0, 0)
       emit('select', item)
@@ -94,7 +99,7 @@ export default defineComponent({
                 key={index}
                 onClick={() => onHandleSelect(item)}
                 class={`${Styles['suggestion-item']} ${index === highLightIndex.value ? Styles['is-active'] : null}`}>
-                {item.login}
+                {item[props.keyValue.key]}
               </li>
             )
           })}
