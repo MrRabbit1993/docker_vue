@@ -42,7 +42,7 @@ export default defineComponent({
         const data = await results
         suggestions.value = data.items
       } else {
-        suggestions.value = results
+        suggestions.value = results || []
       }
     }
 

@@ -674,22 +674,3 @@ declare namespace JSX {
 <foo requiredProp="bar" unknownProp />; // 错误, unknownProp 不存在
 <foo requiredProp="bar" some-unknown-prop />; // 正确, `some-unknown-prop`不是个合法的标识符
 ```
-
-## React
-
-### class 类型定义
-
-```typescript
-interface Props {
-  foo: string;
-}
-
-class MyComponent extends React.Component<Props, {}> {
-  render() {
-    return <span>{this.props.foo}</span>;
-  }
-}
-
-<MyComponent foo="bar" />; // 正确
-<MyComponent foo={0} />; // 错误
-```
