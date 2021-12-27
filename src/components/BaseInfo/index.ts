@@ -1,3 +1,3 @@
-import BaseInfoCmp, { IBaseInfo } from './src'
-export { IBaseInfo }
+import BaseInfoCmp from './src'
+export * from './src'
 export default BaseInfoCmp

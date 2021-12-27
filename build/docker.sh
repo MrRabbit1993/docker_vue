@@ -1,7 +1,7 @@
 #!/bin/bash
 
 dockerImages="vuets"
-version="0.1"
+version="v0.1"
 prot="8087"
 nginxProt="8081"
 containerName="textcontainer"
