@@ -17,3 +17,10 @@ declare module "vue/types/options" {
     [propName: string]: any;
   }
 }
+
+// 扩展vue原型上的方法
+declare module "vue/types/vue" {
+  interface Vue {
+    $getDicts: (name: string) => Array<Record<string, any>>;
+  }
+}

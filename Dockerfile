@@ -1,8 +1,13 @@
-# 设置镜像源
 FROM nginx
-# 设置作者
+
 # MAINTAINER MrRabbit 老版本
 LABEL maintainer="MrRabbit"
-# 将文件复制到指定目录下
+
+# delete nginx config file
+# RUN rm /etc/nginx/conf.d/vue.conf
+
+# COPY nginx config file
+ADD nginx/vue.conf /etc/nginx/conf.d/
+
+# CP dist file
 COPY dist/ /usr/share/nginx/project/vue/
-COPY nginx/vue.conf /etc/nginx/conf.d/

@@ -8,8 +8,8 @@ export default defineComponent({
   components: { AutoCompleteCmp, BaseInfoCmp },
   setup() {
     const searchValue = ref<string>('')
-    const baseInfo = ref<Partial<IBaseInfo>>({})
-    // const baseInfo = ref<IBaseInfo>({} as IBaseInfo)
+    // const baseInfo = ref<Partial<IBaseInfo>>({})
+    const baseInfo = ref<IBaseInfo>({} as IBaseInfo)
     const baseInfoShow = ref<boolean>(false)
     const keyValue = ref<KeyValueProps>({ key: 'login', value: 'login' })
 
